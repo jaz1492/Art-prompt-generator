@@ -1,0 +1,3 @@
+const randomizer(subject){
+    
+}
