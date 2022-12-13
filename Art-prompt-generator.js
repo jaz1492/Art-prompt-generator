@@ -51,4 +51,10 @@ const randomizer= function(subject){
             break;
     }
 }
-randomizer("anything");
+const form = document.querySelector('form');
+const artPrompt = document.querySelector('#artPrompt');
+form.addEventListener("submit", (event)=>{
+    console.log(event);
+    artPrompt.innerText = "works!!"
+    event.preventDefault();});
+// randomizer("anything");

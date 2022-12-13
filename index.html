@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Art prompt generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <article>
+        <h1>Art Prompt Generator</h1>
+        <p>input your prefered subject matter and click the generate button for a prompt for you to draw!</p>
+    </article>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Please select a topic:</legend>
+            <div>
+                <input type="radio" name="topic" id="person" value="person">
+                <label for="person">People</label>
+                <input type="radio" name="topic" id="animal" value="animal">
+                <label for="animal">Animals</label>
+                <input type="radio" name="topic" id="landscape" value="landscape">
+                <label for="landscape">Landscapes</label>
+                <input type="radio" name="topic" id="anything" value="anything" checked>
+                <label for="anything">All</label>
+                <button type="submit">Generate</button>
+            </div>
+        </fieldset>
+    </form>
+    <pre id="artPrompt"> Your prompt will appear here! </pre>
+        <script src="./Art-prompt-generator.js" async defer></script>
+    </body>
+</html>
