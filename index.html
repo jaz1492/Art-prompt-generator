@@ -14,8 +14,8 @@
     </article>
     <form action="" method="get">
         <fieldset>
-            <legend>Please select a topic:</legend>
-            <div>
+            <legend>Please select one:</legend>
+            <div class="selector">
                 <input type="radio" name="topic" id="person" value="person">
                 <label for="person">People</label>
                 <input type="radio" name="topic" id="animal" value="animal">
@@ -24,11 +24,14 @@
                 <label for="landscape">Landscapes</label>
                 <input type="radio" name="topic" id="anything" value="anything" checked>
                 <label for="anything">All</label>
+                <br>
                 <button type="submit">Generate</button>
             </div>
         </fieldset>
     </form>
-    <pre id="artPrompt"> Your prompt will appear here! </pre>
+    <div class="container">
+      <p id="artPrompt"> Your prompt will appear here! </p>
+    </div>
         <script src="./Art-prompt-generator.js" async defer></script>
     </body>
 </html>

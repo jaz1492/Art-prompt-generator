@@ -10,13 +10,13 @@ const numberGen = function(num){return Math.floor(Math.random()*num)};
 //subjectFilter first filters the subject and then maps the name of the filtered objects.
 
 const subjectFilter = function (query,arr){
-  
+
     let filtered = arr.filter(obj=>obj.subject===query).map(obj=>obj.name);
   return filtered;
 }
 const firstLetterVowel = function (word){
     const vowels=['a','e','i','o','u']
-    return vowels.includes(word[0]);
+    return vowels.includes(word[0].toLowerCase());
 }
 const randomWord = function(arr){
   return arr[numberGen(arr.length)];
@@ -36,25 +36,24 @@ const randomizer= function(subject){
             return randomizer(subject);
             break;
         case 'landscape':
-            return console.log(`Ok, here is your prompt: do ${firstLetterVowel(colorRule)?'an':'a'} ${colorRule} painting of ${firstLetterVowel(adjective)?'an':'a'} ${adjective} ${noun}.`);
+            return `Ok, here is your prompt:\n Do ${firstLetterVowel(colorRule)?'an':'a'} ${colorRule} painting of ${firstLetterVowel(adjective)?'an':'a'} ${adjective} ${noun}.`;
             break;
         case 'person':
-            return console.log(`Ok, here is your prompt: do ${firstLetterVowel(colorRule)?'an':'a'} ${colorRule} painting of ${firstLetterVowel(adjective)?'an':'a'} ${adjective} ${noun} ${action} at the ${place}`);
+            return `Ok, here is your prompt:\n Do ${firstLetterVowel(colorRule)?'an':'a'} ${colorRule} painting of ${firstLetterVowel(adjective)?'an':'a'} ${adjective} ${noun} ${action} at the ${place}`;
             break;
         case 'animal':
             adjective = randomWord(subjectFilter('person',adjectives));
-            console.log(colorRule, adjective, noun, action, place);
-            return console.log(`Ok, here is your prompt: do ${firstLetterVowel(colorRule)?'an':'a'} ${colorRule} painting of ${firstLetterVowel(adjective)?'an':'a'} ${adjective} ${noun} ${action} at the ${place}`);
+            return `Ok, here is your prompt:\n Do ${firstLetterVowel(colorRule)?'an':'a'} ${colorRule} painting of ${firstLetterVowel(adjective)?'an':'a'} ${adjective} ${noun} ${action} at the ${place}`;
             break;
-        default: 
-            return console.log(`Sorry but please choose one of the following to run the program: ${subjectChoices}`);
+        default:
+            return `Sorry but please choose one of the following to run the program: ${subjectChoices}`;
             break;
     }
 }
 const form = document.querySelector('form');
 const artPrompt = document.querySelector('#artPrompt');
 form.addEventListener("submit", (event)=>{
-    console.log(event);
-    artPrompt.innerText = "works!!"
+    let text = randomizer(event.srcElement.elements.topic.value);
+    artPrompt.innerText = text;
     event.preventDefault();});
 // randomizer("anything");
