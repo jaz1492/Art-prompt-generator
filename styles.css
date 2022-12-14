@@ -27,12 +27,11 @@ p{
   align-items: center;
 }
 #artPrompt{
-  line-height: 500%;
+  line-height: 2.5em;
   max-width:fit-content;
 }
 @media screen and (max-width:768px) {
   h1{
     background-position: 0 40%;
   }
-  
 }
